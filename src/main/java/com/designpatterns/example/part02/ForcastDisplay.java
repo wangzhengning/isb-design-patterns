@@ -10,9 +10,14 @@ public class ForcastDisplay implements Observer , DisplayElement{
     private float lastPressure;
     private Subject weatherData;
 
+    public ForcastDisplay (Subject weatherData){
+        this.weatherData = weatherData;
+        weatherData.registerObserver ( this );
+    }
+
     @Override
     public void display ( ) {
-        System.out.println ("Forecast: ");
+        System.out.print ("[(天气预报)->布告面板] Forecast: ");
         if(currentPressure > lastPressure){
             System.out.println ("Improving weather on the way!");//天气即将得到改善
         }

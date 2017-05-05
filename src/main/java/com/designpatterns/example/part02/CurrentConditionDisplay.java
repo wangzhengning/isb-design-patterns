@@ -19,7 +19,7 @@ public class CurrentConditionDisplay implements Observer , DisplayElement{
 
     @Override
     public void display ( ) {
-        System.out.println ("Current conditions , temperature = " + temperature  + " F degrees , " +
+        System.out.println ("[(目前状态)->布告面板] Current conditions , temperature = " + temperature  + " F degrees , " +
                 "humidity = " + humidity + "% , pressure = " + pressure +" ↓ ");
     }
 
