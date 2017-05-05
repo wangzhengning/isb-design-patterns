@@ -36,6 +36,4 @@ public class ForcastDisplay implements Observer , DisplayElement{
         display ();
     }
 
-
-
 }
