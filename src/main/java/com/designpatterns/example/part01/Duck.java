@@ -39,6 +39,11 @@ public abstract class Duck {
         return flyBehavior;
     }
 
+
+    /**
+     * 称为:动态设定行为.
+     * @param flyBehavior
+     */
     public void setFlyBehavior ( FlyBehavior flyBehavior ) {
         this.flyBehavior = flyBehavior;
     }
