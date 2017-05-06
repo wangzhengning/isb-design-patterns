@@ -11,5 +11,13 @@ package com.designpatterns.example.part031decorator;
  奶泡：Whip
  */
 public abstract class CondimentDecoratorAbstractWithSizes extends BeverageComponentAbstractWithSizes {
+
+    public BeverageComponentAbstractWithSizes beverage;
+
     public abstract String getDescription();
+
+    public Size getSize ( ) {
+        return beverage.getSize ();
+    }
+
 }

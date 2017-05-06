@@ -6,19 +6,17 @@ package com.designpatterns.example.part031decorator;
  */
 public class WhipDecoratorWithSizes extends CondimentDecoratorAbstractWithSizes {
 
-    BeverageComponentAbstractWithSizes beverageComponentAbstract;
-
     public WhipDecoratorWithSizes ( BeverageComponentAbstractWithSizes beverageComponentAbstract){
-        this.beverageComponentAbstract = beverageComponentAbstract;
+        this.beverage = beverageComponentAbstract;
     }
 
     @Override
     public String getDescription ( ) {
-        return beverageComponentAbstract.getDescription () + " , Whip";
+        return beverage.getDescription () + " , Whip";
     }
 
     @Override
     public double cost ( ) {
-        return 0.10 + beverageComponentAbstract.cost ();
+        return 0.10 + beverage.cost ();
     }
 }

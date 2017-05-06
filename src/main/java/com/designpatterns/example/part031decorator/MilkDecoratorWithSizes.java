@@ -6,19 +6,17 @@ package com.designpatterns.example.part031decorator;
  */
 public class MilkDecoratorWithSizes extends CondimentDecoratorAbstractWithSizes {
 
-    BeverageComponentAbstractWithSizes beverageComponentAbstract;
-
     public MilkDecoratorWithSizes ( BeverageComponentAbstractWithSizes beverageComponentAbstract){
-        this.beverageComponentAbstract = beverageComponentAbstract;
+        this.beverage = beverageComponentAbstract;
     }
 
     @Override
     public String getDescription ( ) {
-        return beverageComponentAbstract.getDescription () + ", Milk";
+        return beverage.getDescription () + ", Milk";
     }
 
     @Override
     public double cost ( ) {
-        return 0.10 + beverageComponentAbstract.cost ();
+        return 0.10 + beverage.cost ();
     }
 }

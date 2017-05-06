@@ -6,19 +6,28 @@ package com.designpatterns.example.part031decorator;
  */
 public class SoyDecoratorWithSizes extends CondimentDecoratorAbstractWithSizes {
 
-    BeverageComponentAbstractWithSizes beverageComponentAbstract;
 
     public SoyDecoratorWithSizes ( BeverageComponentAbstractWithSizes beverageComponentAbstract){
-        this.beverageComponentAbstract = beverageComponentAbstract;
+        this.beverage = beverageComponentAbstract;
     }
 
     @Override
     public String getDescription ( ) {
-        return beverageComponentAbstract.getDescription () + " , Soy";
+        return beverage.getDescription () + " , Soy";
     }
 
     @Override
     public double cost ( ) {
-        return 0.15 + beverageComponentAbstract.cost ();
+        double cost = beverage.cost ();
+        if(beverage.getSize () == Size.TALL){
+           cost += 0.10;
+        }
+        else if(beverage.getSize () == Size.GRANDE){
+           cost += 0.15;
+        }
+        else if(beverage.getSize () == Size.VENTI){
+           cost += 0.20;
+        }
+        return cost;
     }
 }
