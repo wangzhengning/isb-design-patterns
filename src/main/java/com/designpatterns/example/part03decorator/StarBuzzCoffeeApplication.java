@@ -8,10 +8,23 @@ import org.apache.commons.lang3.StringUtils;
 public class StarBuzzCoffeeApplication {
 
     public static void main ( String[] args ) {
-        //浓缩咖啡组件
-        BeverageComponentAbstract beverage = buildBeverage ( EspressoComponent.class.getSimpleName () );
-        System.out.println (beverage.getDescription () + " $" + beverage.cost ());
 
+        BeverageComponentAbstract beverage = buildBeverage ( EspressoComponent.class.getSimpleName () );
+        System.out.println (beverage.getDescription () + " , $" + beverage.cost ());
+
+        System.out.println ("====================");
+        BeverageComponentAbstract beverage2 = new DarkRoastComponent ();
+        beverage2 = new MochaDecorator ( beverage2 );
+        beverage2 = new MochaDecorator ( beverage2 );
+        beverage2 = new WhipDecorator ( beverage2 );
+        System.out.println (beverage2.getDescription ()+ " , $" + beverage2.cost ());
+
+        System.out.println ("====================");
+        BeverageComponentAbstract beverage3 = new HouseBlendComponent ();
+        beverage3 = new SoyDecorator ( beverage3 );
+        beverage3 = new MochaDecorator ( beverage3 );
+        beverage3 = new WhipDecorator ( beverage3 );
+        System.out.println (beverage3.getDescription ()+ " , $" + beverage3.cost ());
     }
 
     /**
@@ -72,11 +85,6 @@ public class StarBuzzCoffeeApplication {
 
         return null;
     }
-
-
-
-
-
 
 }
 
