@@ -8,7 +8,6 @@ import java.util.List;
  * Created by zn.wang on 17/5/7.
  * 使用简单工厂,描述披萨店
  * 注意:披萨的制作流程哈
- * (1)从工厂得到一个原始披萨对象,不能吃.
  * (2)prepare:准备
  * (3)bake:烘烤
  * (4)cut:切片
