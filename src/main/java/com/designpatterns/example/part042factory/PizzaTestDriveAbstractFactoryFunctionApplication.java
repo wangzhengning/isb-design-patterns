@@ -5,11 +5,8 @@ package com.designpatterns.example.part042factory;
  */
 public class PizzaTestDriveAbstractFactoryFunctionApplication {
     public static void main(String[] args) {
-        PizzaIngredientFactory nyIngredientFactory = new NYPizzaIngredientFactory();
-        PizzaStore nyStore = new NYPizzaStore(nyIngredientFactory);
-
-        PizzaIngredientFactory chicagoingredientFactory = new ChicagoPizzaIngredientFactory();
-        PizzaStore chicagoStore = new ChicagoPizzaStore(chicagoingredientFactory);
+        PizzaStore nyStore = new NYPizzaStore();
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
 
         Pizza pizza = nyStore.orderPizza("cheese");
         System.out.println("Ethan ordered a " + pizza + "\n");

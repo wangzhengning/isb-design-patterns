@@ -5,15 +5,10 @@ package com.designpatterns.example.part042factory;
  */
 public class ChicagoPizzaStore extends PizzaStore {
 
-    PizzaIngredientFactory ingredientFactory;
-    public ChicagoPizzaStore(PizzaIngredientFactory ingredientFactory){
-        this.ingredientFactory = ingredientFactory;
-    }
-
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
-//        PizzaIngredientFactory ingredientFactory =
-//                new ChicagoPizzaIngredientFactory();
+        PizzaIngredientFactory ingredientFactory =
+                new ChicagoPizzaIngredientFactory();
 
         if (item.equals("cheese")) {
 
